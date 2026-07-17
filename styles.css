@@ -126,6 +126,52 @@ a {
   color: var(--gold-light);
 }
 
+.top-links {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.top-link {
+  min-width: 6.5rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--gold-dark);
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(8px);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--gold);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.top-link:hover {
+  background: rgba(201, 168, 76, 0.14);
+  border-color: var(--gold);
+}
+
+.top-link.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+.home-link {
+  color: var(--gold);
+}
+
+.home-link:hover {
+  color: var(--gold-light);
+}
+
 .site-nav {
   display: flex;
   justify-content: center;
@@ -163,6 +209,25 @@ a {
   padding: 3rem 1.5rem 2rem;
   position: relative;
   border-bottom: 1px solid var(--gold-dark);
+}
+
+@media (max-width: 600px) {
+  .top-links {
+    top: 0.65rem;
+    right: 0.65rem;
+    gap: 0.35rem;
+  }
+
+  .top-link {
+    min-width: 0;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .marquee-header {
+    padding-top: 3.75rem;
+  }
 }
 
 .marquee-stars {
