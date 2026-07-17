@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RSVP — Vinu's Birthday Bash</title>
+    <title>Vinu's Birthday Bash</title>
     <meta
       name="description"
-      content="RSVP to Vinu's Around the World birthday weekend in Kissimmee."
+      content="Vinu's Around the World birthday weekend — choose RSVP or itinerary."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,13 +18,6 @@
   </head>
   <body>
     <header class="marquee-header">
-      <nav class="site-nav" aria-label="Site">
-        <a class="site-nav-link is-active" href="index.html" aria-current="page"
-          >RSVP</a
-        >
-        <a class="site-nav-link" href="itinerary.html">Itinerary</a>
-      </nav>
-
       <div class="marquee-eyebrow">A Celebration in the Grand Tradition</div>
       <div class="marquee-stars">
         <span class="star">★ ★ ★ ★ ★ ★ ★ ★ ★</span>
@@ -52,142 +45,28 @@
         <div class="marquee-date-item">Dec 6</div>
         <div class="marquee-date-item">Dec 7 — Birthday</div>
       </div>
-      <div class="marquee-actions">
-        <a class="btn btn-primary" href="#rsvp">RSVP Now</a>
-        <a class="btn" href="itinerary.html">See the Itinerary</a>
-      </div>
-
     </header>
+
     <div class="content">
-      <div class="theme-badge">
-        <div class="theme-badge-label">Weekend Theme</div>
-        <div class="theme-badge-text" data-field="theme">
-          Rat Pack Meets Mickey Mouse
-        </div>
-        <div class="theme-badge-desc" data-field="themeDesc">
-          Fedoras & Mouse Ears · Classic Cocktails & Mickey Waffles · Old
-          Hollywood Glamour meets Disney Magic
-        </div>
+      <p class="choose-lede">Choose a page to continue</p>
+      <div class="choose-grid">
+        <a class="choose-card" href="rsvp.html">
+          <span class="choose-label">Page 1</span>
+          <span class="choose-title">RSVP</span>
+          <span class="choose-desc"
+            >Tell me if you’re coming. Airbnb is covered for the stay.</span
+          >
+          <span class="choose-cta">Open RSVP →</span>
+        </a>
+        <a class="choose-card" href="itinerary.html">
+          <span class="choose-label">Page 2</span>
+          <span class="choose-title">Itinerary</span>
+          <span class="choose-desc"
+            >Full weekend schedule, Epcot plan, costs, and tips.</span
+          >
+          <span class="choose-cta">Open Itinerary →</span>
+        </a>
       </div>
-
-      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-heading">
-        <div class="cost-header">
-          <h2 class="section-title" id="rsvp-heading">RSVP</h2>
-          <div class="cost-header-line"></div>
-        </div>
-
-        <div class="rsvp-card">
-          <div class="rsvp-header">
-            <div class="day-number">★</div>
-            <div>
-              <div class="rsvp-title">Are you in?</div>
-              <div class="rsvp-sub">Reply for Dec 4–7, 2026</div>
-            </div>
-            <div class="day-tag rsvp">Your Reply</div>
-          </div>
-          <div class="rsvp-body">
-            <p class="rsvp-lede">
-              Tell me if you’re joining the Rat Pack for the weekend — Airbnb is
-              covered for the stay. You’ll get an email confirmation, and I’ll
-              keep the attendee list updated.
-            </p>
-
-            <p class="rsvp-download cost-note" id="rsvp-download" hidden>
-              <a href="#" target="_blank" rel="noopener noreferrer"
-                >Open RSVP spreadsheet</a
-              >
-              (download as Excel from File → Download in Google Sheets)
-            </p>
-
-            <form class="rsvp-form" id="rsvp-form" novalidate>
-              <label class="field">
-                <span>Name</span>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  autocomplete="name"
-                  placeholder="Your name"
-                />
-              </label>
-
-              <label class="field">
-                <span>Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  autocomplete="email"
-                  placeholder="you@example.com"
-                />
-              </label>
-
-              <fieldset class="field field-choice">
-                <legend>Will you be there?</legend>
-                <div class="choices" role="radiogroup" aria-label="Attendance">
-                  <label class="choice">
-                    <input
-                      type="radio"
-                      name="attendance"
-                      value="Yes"
-                      required
-                    />
-                    <span>Yes</span>
-                  </label>
-                  <label class="choice">
-                    <input type="radio" name="attendance" value="Maybe" />
-                    <span>Maybe</span>
-                  </label>
-                  <label class="choice">
-                    <input type="radio" name="attendance" value="No" />
-                    <span>Can't make it</span>
-                  </label>
-                </div>
-              </fieldset>
-
-              <label class="field">
-                <span>Guests (including you)</span>
-                <input
-                  type="number"
-                  name="guests"
-                  min="1"
-                  max="10"
-                  value="1"
-                  inputmode="numeric"
-                />
-              </label>
-
-              <label class="field">
-                <span>Nights <em>(optional)</em></span>
-                <input
-                  type="text"
-                  name="nights"
-                  placeholder="e.g. Fri–Mon, Sat only…"
-                />
-              </label>
-
-              <label class="field">
-                <span>Note <em>(optional)</em></span>
-                <textarea
-                  name="message"
-                  rows="3"
-                  placeholder="Dietary needs, kids joining, travel plans…"
-                ></textarea>
-              </label>
-
-              <button class="btn btn-primary btn-submit" type="submit">
-                Send RSVP
-              </button>
-              <p
-                class="form-status"
-                id="form-status"
-                role="status"
-                aria-live="polite"
-              ></p>
-            </form>
-          </div>
-        </div>
-      </section>
     </div>
 
     <footer class="footer">
@@ -199,8 +78,5 @@
         &nbsp; ★
       </div>
     </footer>
-
-    <script src="config.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>

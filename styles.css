@@ -36,9 +36,100 @@ a {
   text-decoration: none;
 }
 
+.choose-lede {
+  text-align: center;
+  margin: 0 0 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.choose-card {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.5rem 1.35rem;
+  border: 1px solid var(--gold-dark);
+  background: #0f0f0a;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.choose-card:hover {
+  border-color: var(--gold);
+  background: #14110a;
+  transform: translateY(-2px);
+}
+
+.choose-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.choose-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.choose-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.choose-cta {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.page-header {
+  padding-bottom: 1.75rem;
+}
+
+.page-title {
+  font-size: clamp(3rem, 9vw, 5rem);
+}
+
+.page-switch {
+  margin: 2rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.page-switch a {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.page-switch a:hover {
+  color: var(--gold-light);
+}
+
 .site-nav {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.75rem;
 }
@@ -790,6 +881,7 @@ a {
 }
 
 @media (max-width: 600px) {
+  .choose-grid,
   .cost-grid,
   .tips-grid,
   .choices {

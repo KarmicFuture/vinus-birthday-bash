@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSVP — Vinu's Birthday Bash</title>
+    <meta
+      name="description"
+      content="RSVP to Vinu's Around the World birthday weekend in Kissimmee."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="marquee-header page-header">
+      <nav class="site-nav" aria-label="Site">
+        <a class="site-nav-link" href="index.html">Home</a>
+        <a class="site-nav-link is-active" href="rsvp.html" aria-current="page"
+          >RSVP</a
+        >
+        <a class="site-nav-link" href="itinerary.html">Itinerary</a>
+      </nav>
+
+      <div class="marquee-eyebrow">Page 1 of 2</div>
+      <h1 class="marquee-title page-title">RSVP</h1>
+      <p class="marquee-subtitle">Are you in for Dec 4–7, 2026?</p>
+    </header>
+
+    <div class="content">
+      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-heading">
+        <div class="rsvp-card">
+          <div class="rsvp-header">
+            <div class="day-number">★</div>
+            <div>
+              <div class="rsvp-title" id="rsvp-heading">Your reply</div>
+              <div class="rsvp-sub">Vinu's Birthday Bash</div>
+            </div>
+            <div class="day-tag rsvp">RSVP</div>
+          </div>
+          <div class="rsvp-body">
+            <p class="rsvp-lede">
+              Airbnb is covered for the stay. You’ll get an email confirmation,
+              and I’ll keep the attendee list updated.
+            </p>
+
+            <p class="rsvp-download cost-note" id="rsvp-download" hidden>
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                >Open RSVP spreadsheet</a
+              >
+              (download as Excel from File → Download in Google Sheets)
+            </p>
+
+            <form class="rsvp-form" id="rsvp-form" novalidate>
+              <label class="field">
+                <span>Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Your name"
+                />
+              </label>
+
+              <label class="field">
+                <span>Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                />
+              </label>
+
+              <fieldset class="field field-choice">
+                <legend>Will you be there?</legend>
+                <div class="choices" role="radiogroup" aria-label="Attendance">
+                  <label class="choice">
+                    <input
+                      type="radio"
+                      name="attendance"
+                      value="Yes"
+                      required
+                    />
+                    <span>Yes</span>
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="attendance" value="Maybe" />
+                    <span>Maybe</span>
+                  </label>
+                  <label class="choice">
+                    <input type="radio" name="attendance" value="No" />
+                    <span>Can't make it</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <label class="field">
+                <span>Guests (including you)</span>
+                <input
+                  type="number"
+                  name="guests"
+                  min="1"
+                  max="10"
+                  value="1"
+                  inputmode="numeric"
+                />
+              </label>
+
+              <label class="field">
+                <span>Nights <em>(optional)</em></span>
+                <input
+                  type="text"
+                  name="nights"
+                  placeholder="e.g. Fri–Mon, Sat only…"
+                />
+              </label>
+
+              <label class="field">
+                <span>Note <em>(optional)</em></span>
+                <textarea
+                  name="message"
+                  rows="3"
+                  placeholder="Dietary needs, kids joining, travel plans…"
+                ></textarea>
+              </label>
+
+              <button class="btn btn-primary btn-submit" type="submit">
+                Send RSVP
+              </button>
+              <p
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+
+        <p class="page-switch">
+          Want the schedule?
+          <a href="itinerary.html">Go to the Itinerary page →</a>
+        </p>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-text">
+        "The best is yet to come." — Frank Sinatra & Vinu, December 7, 2026
+      </div>
+      <div class="footer-meta">
+        ★ &nbsp; Rat Pack Meets Mickey Mouse &nbsp; ★ &nbsp; Kissimmee, Florida
+        &nbsp; ★
+      </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
