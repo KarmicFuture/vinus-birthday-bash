@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=assets3" />
+    <link rel="stylesheet" href="styles.css?v=fun1" />
   </head>
   <body>
     <nav class="top-links" aria-label="Primary">
@@ -23,6 +23,9 @@
     </nav>
 
     <header class="marquee-header">
+      <div class="invite-ribbon">
+        <span class="invite-ribbon-text">You're Invited</span>
+      </div>
       <div class="marquee-eyebrow">A Celebration in the Grand Tradition</div>
       <div class="marquee-stars">
         <span class="star">★ ★ ★ ★ ★ ★ ★ ★ ★</span>
@@ -49,6 +52,28 @@
         <div class="marquee-date-item">Dec 5</div>
         <div class="marquee-date-item">Dec 6</div>
         <div class="marquee-date-item">Dec 7 — Birthday</div>
+      </div>
+
+      <div class="countdown" id="countdown" aria-label="Countdown to the party">
+        <div class="countdown-label">The party starts in</div>
+        <div class="countdown-grid">
+          <div class="countdown-cell">
+            <span class="countdown-num" id="cd-days">—</span>
+            <span class="countdown-unit">Days</span>
+          </div>
+          <div class="countdown-cell">
+            <span class="countdown-num" id="cd-hours">—</span>
+            <span class="countdown-unit">Hours</span>
+          </div>
+          <div class="countdown-cell">
+            <span class="countdown-num" id="cd-minutes">—</span>
+            <span class="countdown-unit">Minutes</span>
+          </div>
+          <div class="countdown-cell">
+            <span class="countdown-num" id="cd-seconds">—</span>
+            <span class="countdown-unit">Seconds</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -421,23 +446,25 @@
     </section>
 
     <div class="content">
-      <p class="choose-lede">Choose a page to continue</p>
+      <p class="choose-lede">The only question left is — are you in?</p>
       <div class="choose-grid">
         <a class="choose-card" href="rsvp.html">
-          <span class="choose-label">Page 1</span>
+          <span class="choose-label">Step One</span>
           <span class="choose-title">RSVP</span>
           <span class="choose-desc"
-            >Tell me if you’re coming. Airbnb is covered for the stay.</span
+            >Claim your spot. The Airbnb is covered — you just bring
+            yourself.</span
           >
-          <span class="choose-cta">Open RSVP →</span>
+          <span class="choose-cta">Count me in →</span>
         </a>
         <a class="choose-card" href="itinerary.html">
-          <span class="choose-label">Page 2</span>
+          <span class="choose-label">Step Two</span>
           <span class="choose-title">Itinerary</span>
           <span class="choose-desc"
-            >Full weekend schedule, Epcot plan, costs, and tips.</span
+            >Four days, eleven countries, one lagoon. See the whole
+            plan.</span
           >
-          <span class="choose-cta">Open Itinerary →</span>
+          <span class="choose-cta">Show me the plan →</span>
         </a>
       </div>
     </div>
@@ -453,5 +480,6 @@
     </footer>
 
     <script src="world.js"></script>
+    <script src="festive.js"></script>
   </body>
 </html>

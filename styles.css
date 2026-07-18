@@ -1316,6 +1316,240 @@ a {
   }
 }
 
+/* ---------- Festive layer ---------- */
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.starfield span {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gold-light);
+  opacity: 0;
+  animation: star-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+/* Keep page content above the starfield. */
+.marquee-header,
+.world-showcase,
+.content,
+.footer,
+.top-links {
+  position: relative;
+  z-index: 1;
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.invite-ribbon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.invite-ribbon-text {
+  position: relative;
+  display: inline-block;
+  padding: 0.45rem 1.6rem;
+  border: 1px solid var(--gold);
+  color: var(--black);
+  background: linear-gradient(100deg, var(--gold-dark), var(--gold) 40%, var(--gold-light) 50%, var(--gold) 60%, var(--gold-dark));
+  background-size: 250% 100%;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  animation: ribbon-sheen 3.2s linear infinite;
+}
+
+.invite-ribbon-text::before,
+.invite-ribbon-text::after {
+  content: "★";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.invite-ribbon-text::before {
+  left: -1.4rem;
+}
+
+.invite-ribbon-text::after {
+  right: -1.4rem;
+}
+
+@keyframes ribbon-sheen {
+  0% {
+    background-position: 125% 0;
+  }
+  100% {
+    background-position: -125% 0;
+  }
+}
+
+/* Shimmer sweep across the big title */
+.marquee-title {
+  background: linear-gradient(
+    100deg,
+    var(--cream) 0%,
+    var(--cream) 40%,
+    var(--gold-light) 50%,
+    var(--cream) 60%,
+    var(--cream) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-shimmer 5.5s ease-in-out infinite;
+}
+
+.marquee-title span {
+  -webkit-text-fill-color: var(--gold);
+}
+
+@keyframes title-shimmer {
+  0%,
+  55% {
+    background-position: 125% 0;
+  }
+  90%,
+  100% {
+    background-position: -125% 0;
+  }
+}
+
+.star {
+  animation: stars-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes stars-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(232, 201, 122, 0.8);
+  }
+}
+
+.countdown {
+  margin-top: 1.75rem;
+}
+
+.countdown-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.countdown-grid {
+  display: inline-flex;
+  gap: 0.6rem;
+}
+
+.countdown-cell {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 4.4rem;
+  padding: 0.7rem 0.6rem 0.6rem;
+  border: 1px solid var(--gold-dark);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.countdown-num {
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gold-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-unit {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+  .countdown-cell {
+    min-width: 3.6rem;
+    padding: 0.55rem 0.4rem 0.5rem;
+  }
+
+  .countdown-num {
+    font-size: 1.35rem;
+  }
+}
+
+/* Livelier chooser cards */
+.choose-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.choose-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(232, 201, 122, 0.12),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left 500ms ease;
+  pointer-events: none;
+}
+
+.choose-card:hover::after {
+  left: 130%;
+}
+
+.choose-card:hover {
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.16);
+}
+
+.choose-card:hover .choose-cta {
+  color: var(--gold-light);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1326,8 +1560,19 @@ a {
   .earth-core,
   .world-lagoon::after,
   .earth-ripple,
-  .choose-card:hover {
+  .choose-card:hover,
+  .starfield span,
+  .invite-ribbon-text,
+  .marquee-title,
+  .star {
     animation: none;
+  }
+
+  .marquee-title {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: var(--cream);
   }
 
   .pavilion-stabilize {
@@ -1336,5 +1581,9 @@ a {
 
   .choose-card:hover {
     transform: none;
+  }
+
+  .choose-card::after {
+    display: none;
   }
 }

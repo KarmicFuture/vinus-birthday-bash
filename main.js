@@ -88,6 +88,9 @@
         setStatus(
           "You're on the list — check your email for a confirmation."
         );
+        if (typeof window.launchConfetti === "function") {
+          window.launchConfetti(5000);
+        }
       } catch (error) {
         setStatus(
           error.message ||
