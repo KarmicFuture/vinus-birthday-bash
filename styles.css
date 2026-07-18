@@ -1514,6 +1514,61 @@ a {
   }
 }
 
+/* ---------- Guest of honor ---------- */
+
+.guest-of-honor {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 1.5rem 0.5rem;
+}
+
+.guest-frame {
+  display: inline-block;
+  max-width: 460px;
+  margin-top: 1.75rem;
+  padding: 10px;
+  border: 1px solid var(--gold);
+  outline: 1px solid var(--gold-dark);
+  outline-offset: 5px;
+  background: #0f0f0a;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6), 0 0 34px rgba(201, 168, 76, 0.12);
+  transform: rotate(-1.2deg);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.guest-frame:hover {
+  transform: rotate(0deg) scale(1.015);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.65), 0 0 44px rgba(201, 168, 76, 0.22);
+}
+
+.guest-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.guest-plaque {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.9rem 0.8rem 0.5rem;
+}
+
+.guest-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+.guest-caption {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
 /* ---------- Epcot monorail ---------- */
 
 .monorail {
@@ -1727,6 +1782,159 @@ a {
   font-size: 0.88rem;
   line-height: 1.55;
   color: var(--text-dim);
+}
+
+/* ---------- Easter eggs ---------- */
+
+.egg-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.egg-box {
+  position: relative;
+  max-width: 34rem;
+  width: 100%;
+  padding: 2rem 1.8rem 1.6rem;
+  text-align: center;
+  border: 1px solid var(--gold);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(201, 168, 76, 0.05) 0,
+      rgba(201, 168, 76, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    #0d0d0a;
+  box-shadow: 0 0 60px rgba(201, 168, 76, 0.25);
+  animation: egg-pop 240ms cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+@keyframes egg-pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.egg-kicker {
+  font-family: monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.7rem;
+}
+
+.egg-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  margin-bottom: 0.8rem;
+}
+
+.egg-body {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--cream);
+}
+
+.egg-tape {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0.6rem 0 1rem;
+  text-align: left;
+}
+
+.egg-side strong {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.egg-side ol {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+
+@media (max-width: 520px) {
+  .egg-tape {
+    grid-template-columns: 1fr;
+  }
+}
+
+.egg-close {
+  margin-top: 1.2rem;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--gold-dark);
+  background: transparent;
+  color: var(--gold);
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: egg-blink 1.4s step-end infinite;
+}
+
+.egg-close:hover {
+  background: rgba(201, 168, 76, 0.12);
+  animation: none;
+}
+
+@keyframes egg-blink {
+  0%,
+  60%,
+  100% {
+    opacity: 1;
+  }
+  70%,
+  90% {
+    opacity: 0.45;
+  }
+}
+
+.egg-cassette {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 180ms ease, transform 180ms ease;
+  vertical-align: middle;
+}
+
+.egg-cassette:hover {
+  opacity: 1;
+  transform: rotate(-4deg);
+}
+
+.egg-cassette svg {
+  width: 26px;
+  height: 17px;
+  display: block;
 }
 
 /* Livelier chooser cards */

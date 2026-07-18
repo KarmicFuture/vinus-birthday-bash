@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=fun3" />
+    <link rel="stylesheet" href="styles.css?v=fun5" />
   </head>
   <body>
     <nav class="top-links" aria-label="Primary">
@@ -77,6 +77,28 @@
         </div>
       </div>
     </header>
+
+    <section class="guest-of-honor" aria-label="Guest of honor">
+      <p class="world-showcase-kicker">Your Host &amp; Guest of Honor</p>
+      <h2 class="world-showcase-title">The Chairman of the Board</h2>
+      <div class="guest-frame">
+        <img
+          src="assets/guest-of-honor.jpg"
+          alt="Vinu in a straw cowboy hat on a plane, holding a plush duck"
+          width="1200"
+          height="900"
+          loading="lazy"
+        />
+        <div class="guest-plaque">
+          <span class="guest-name">Vinu</span>
+          <span class="guest-caption"
+            >En route to the festivities with Chief Party Officer, Sir
+            Quackers. The fedora arrives in December — this is the straw hat
+            era.</span
+          >
+        </div>
+      </div>
+    </section>
 
     <section
       class="world-showcase"
@@ -568,11 +590,26 @@
       <div class="footer-meta">
         ★ &nbsp; Rat Pack Meets Mickey Mouse &nbsp; ★ &nbsp; Kissimmee, Florida
         &nbsp; ★
+        <button
+          class="egg-cassette"
+          id="egg-cassette"
+          type="button"
+          aria-label="A mixtape someone left behind"
+        >
+          <svg viewBox="0 0 26 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="25" height="16" rx="2" fill="none" stroke="#c9a84c" />
+            <rect x="4" y="3" width="18" height="7" rx="1.5" fill="none" stroke="#c9a84c" stroke-width="0.75" />
+            <circle cx="8.5" cy="6.5" r="1.8" fill="none" stroke="#c9a84c" stroke-width="0.75" />
+            <circle cx="17.5" cy="6.5" r="1.8" fill="none" stroke="#c9a84c" stroke-width="0.75" />
+            <path d="M6 13 L8 16 H18 L20 13 Z" fill="none" stroke="#c9a84c" stroke-width="0.75" />
+          </svg>
+        </button>
       </div>
     </footer>
 
     <script src="world.js"></script>
     <script src="festive.js"></script>
     <script src="monorail.js"></script>
+    <script src="eggs.js"></script>
   </body>
 </html>
