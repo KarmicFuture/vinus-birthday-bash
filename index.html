@@ -14,12 +14,13 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=fun1" />
+    <link rel="stylesheet" href="styles.css?v=fun3" />
   </head>
   <body>
     <nav class="top-links" aria-label="Primary">
       <a class="top-link" href="rsvp.html">RSVP</a>
       <a class="top-link" href="itinerary.html">Itinerary</a>
+      <a class="top-link" href="hotels.html">Hotels</a>
     </nav>
 
     <header class="marquee-header">
@@ -445,6 +446,93 @@
       </p>
     </section>
 
+    <section class="monorail" aria-label="How we travel for the weekend">
+      <p class="world-showcase-kicker">Getting There</p>
+      <h2 class="world-showcase-title">The Highway in the Sky</h2>
+      <p class="world-showcase-sub">
+        Hop aboard the Vinu Express — from touchdown to toasts in three easy
+        hops.
+      </p>
+
+      <div class="monorail-stage" aria-hidden="true">
+        <div class="monorail-track">
+          <div class="monorail-pylons"></div>
+          <div class="monorail-beam"></div>
+
+          <div class="monorail-station" style="--pos: 6%">
+            <span class="station-dot"></span>
+            <span class="station-name">MCO Airport</span>
+            <span class="station-note">Fly in Friday</span>
+          </div>
+          <div class="monorail-station" style="--pos: 37%">
+            <span class="station-dot"></span>
+            <span class="station-name">The Airbnb</span>
+            <span class="station-note">Kissimmee · Home base</span>
+          </div>
+          <div class="monorail-station" style="--pos: 68%">
+            <span class="station-dot"></span>
+            <span class="station-name">Epcot</span>
+            <span class="station-note">Saturday · 9 AM</span>
+          </div>
+          <div class="monorail-station" style="--pos: 94%">
+            <span class="station-dot"></span>
+            <span class="station-name">World Showcase</span>
+            <span class="station-note">Drinks await</span>
+          </div>
+
+          <div class="monorail-train" id="monorail-train">
+            <svg
+              viewBox="0 0 260 64"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <!-- body with sloped nose facing right -->
+              <path
+                d="M8 50 L8 28 Q8 14 26 13 L196 13 Q232 13 252 38 Q256 44 250 47 Q240 50 226 50 Z"
+                fill="#f5edd6"
+              />
+              <!-- nose canopy window -->
+              <path
+                d="M206 17 Q228 18 244 38 Q246 42 240 43 L212 43 Q206 43 206 36 Z"
+                fill="#1a1a1a"
+              />
+              <!-- side windows -->
+              <rect x="22" y="20" width="24" height="14" rx="4" fill="#1a1a1a" />
+              <rect x="54" y="20" width="24" height="14" rx="4" fill="#1a1a1a" />
+              <rect x="86" y="20" width="24" height="14" rx="4" fill="#1a1a1a" />
+              <rect x="118" y="20" width="24" height="14" rx="4" fill="#1a1a1a" />
+              <rect x="150" y="20" width="24" height="14" rx="4" fill="#1a1a1a" />
+              <!-- signature stripe -->
+              <path
+                d="M8 40 L236 40 Q245 40 249 44 Q250 46 247 47 L8 47 Z"
+                fill="#c9a84c"
+              />
+              <!-- skirt hugging the beam -->
+              <rect x="14" y="50" width="206" height="7" rx="3" fill="#2a2a2a" />
+              <!-- headlight -->
+              <circle cx="250" cy="41" r="2.5" fill="#e8c97a" />
+              <text
+                x="96"
+                y="45.5"
+                font-family="Raleway, sans-serif"
+                font-size="6"
+                font-weight="700"
+                letter-spacing="1.5"
+                fill="#0a0a0a"
+                text-anchor="middle"
+              >
+                VINU EXPRESS
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <p class="monorail-caption" id="monorail-caption">
+        Now boarding: <strong>the Vinu Express</strong>
+      </p>
+    </section>
+
     <div class="content">
       <p class="choose-lede">The only question left is — are you in?</p>
       <div class="choose-grid">
@@ -467,6 +555,10 @@
           <span class="choose-cta">Show me the plan →</span>
         </a>
       </div>
+      <p class="page-switch">
+        Not bunking at the villa?
+        <a href="hotels.html">Browse nearby hotels →</a>
+      </p>
     </div>
 
     <footer class="footer">
@@ -481,5 +573,6 @@
 
     <script src="world.js"></script>
     <script src="festive.js"></script>
+    <script src="monorail.js"></script>
   </body>
 </html>

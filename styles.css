@@ -1514,6 +1514,221 @@ a {
   }
 }
 
+/* ---------- Epcot monorail ---------- */
+
+.monorail {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+  border-top: 1px solid var(--gold-dark);
+}
+
+.monorail-stage {
+  max-width: 860px;
+  margin: 2.5rem auto 0;
+}
+
+.monorail-track {
+  position: relative;
+  height: 150px;
+}
+
+/* elevated beam */
+.monorail-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0.25),
+    var(--gold-dark) 12%,
+    var(--gold-dark) 88%,
+    rgba(201, 168, 76, 0.25)
+  );
+  border-radius: 3px;
+}
+
+/* support pylons under the beam */
+.monorail-pylons {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  top: 70px;
+  height: 34px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 78px,
+    rgba(201, 168, 76, 0.35) 78px,
+    rgba(201, 168, 76, 0.35) 82px
+  );
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+}
+
+.monorail-station {
+  position: absolute;
+  top: 58px;
+  left: var(--pos);
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  width: 9.5rem;
+}
+
+.station-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--black);
+  transition:
+    background-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.monorail-station.is-here .station-dot {
+  background: var(--gold);
+  box-shadow: 0 0 14px rgba(232, 201, 122, 0.9);
+}
+
+.station-name {
+  margin-top: 1.35rem;
+  font-family: "Playfair Display", serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+
+.monorail-station.is-here .station-name {
+  color: var(--gold-light);
+}
+
+.station-note {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.monorail-train {
+  position: absolute;
+  top: 8px;
+  left: 6%;
+  width: 220px;
+  transform: translateX(-50%);
+  transition: left 2800ms cubic-bezier(0.45, 0.05, 0.35, 1);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.55));
+}
+
+.monorail-train svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 400ms ease;
+}
+
+.monorail-train.is-returning svg {
+  transform: scaleX(-1);
+}
+
+.monorail-caption {
+  margin-top: 1.4rem;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.monorail-caption strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .monorail-track {
+    height: 170px;
+  }
+
+  .monorail-train {
+    width: 150px;
+    top: 26px;
+  }
+
+  .monorail-station {
+    width: 5.4rem;
+  }
+
+  .station-name {
+    font-size: 0.68rem;
+  }
+
+  .station-note {
+    font-size: 0.48rem;
+  }
+}
+
+/* ---------- Hotels page ---------- */
+
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.hotel-card {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  padding: 1.4rem 1.3rem;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.hotel-card:hover {
+  border-color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.12);
+}
+
+.hotel-tier {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hotel-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.25;
+}
+
+.hotel-meta {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.hotel-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
 /* Livelier chooser cards */
 .choose-card {
   position: relative;
@@ -1585,5 +1800,9 @@ a {
 
   .choose-card::after {
     display: none;
+  }
+
+  .monorail-train {
+    transition: none;
   }
 }
